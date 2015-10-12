@@ -1,0 +1,54 @@
+
+* Jekyll contribution layer for Spacemacs
+
+#+CAPTION: logo
+
+[[img/jekyll.png]]
+
+
+** Table of contents :TOC@4:
+ - [[#jekyll-contribution-layer-for-spacemacs][Jekyll contribution layer for Spacemacs]]
+   - [[#description][Description]]
+     - [[#features][Features]]
+   - [[#install][Install]]
+ - [[#key-bindings][Key Bindings]]
+   - [[#markdown-and-hyde-mode][Markdown and Hyde-mode]]
+   - [[#hyde-home][Hyde-home]]
+
+** Description
+Adds jekyll support powered by [[https://github.com/nibrahim/Hyde][Hyde]]. 
+
+*** Features
+- Highlighting for markdown files
+- instant creation of drafts / new posts
+- built-in versioning
+- built-in start / stop of the jekyll server
+
+** Install
+
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(jekyll))
+#+end_src
+* Key Bindings
+
+** Markdown and Hyde-mode
+
+| Key Binding | Description      |
+|-------------+------------------|
+| ~SPC m h~   | Launch hyde home |
+| ~SPC m s~   | Jekyll serve     |
+| ~SPC m S~   | Stop serving     |
+| ~SPC m j~   | Run Jekyll       |
+
+** Hyde-home
+
+| Key Binding | Description           |
+|-------------+-----------------------|
+| ~g~         | Refresh posts         |
+| ~D~         | Delete current post   |
+| ~p~         | Promote draft to post |
+| ~q~         | Quite hyde home       |
+| ~n~         | New post              |
+
