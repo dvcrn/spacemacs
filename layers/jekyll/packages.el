@@ -55,8 +55,8 @@
        (evil-define-key 'normal hyde-mode-map (kbd "RET") 'hyde/open-post-maybe)
        (evil-define-key 'normal hyde-mode-map "g" 'hyde/load-posts)
        (evil-define-key 'normal hyde-mode-map "D" 'hyde/delete-post)
-							(evil-define-key 'normal hyde-mode-map "p" 'hyde/promote-to-post)
-							(evil-define-key 'normal hyde-mode-map "q" 'hyde/quit)
-							(evil-define-key 'normal hyde-mode-map "n" 'hyde/new-post))))
+       (evil-define-key 'normal hyde-mode-map "p" 'hyde/promote-to-post)
+       (evil-define-key 'normal hyde-mode-map "q" 'hyde/quit)
+       (evil-define-key 'normal hyde-mode-map "n" 'hyde/new-post))))
 
 ;;; jekyll-mode ends here
