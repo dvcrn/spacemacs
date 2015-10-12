@@ -15,6 +15,7 @@
 (setq jekyll-packages
     '(
       hyde
+      markdown-mode
       ))
 
 ;; List of packages to exclude.
@@ -38,14 +39,16 @@
      (progn
        (require 'hyde)
        (defvar hyde-home nil)
-       (add-to-list 'auto-mode-alist '("\\.md\\'" . hyde-markdown-mode))
-       (add-to-list 'auto-mode-alist '("\\.markdown\\'" . hyde-markdown-mode)))
+       (define-derived-mode jekyll-mode hyde-markdown-mode "jekyll")
+
+       (add-to-list 'auto-mode-alist '("\\.md\\'" . jekyll-mode))
+       (add-to-list 'auto-mode-alist '("\\.markdown\\'" . jekyll-mode)))
      :config
      (progn
-       (evil-leader/set-key-for-mode 'hyde-markdown-mode "mh" 'hyde)
-       (evil-leader/set-key-for-mode 'hyde-markdown-mode "ms" 'hyde/serve)
-       (evil-leader/set-key-for-mode 'hyde-markdown-mode "mS" 'hyde/stop-serve)
-       (evil-leader/set-key-for-mode 'hyde-markdown-mode "mj" 'hyde/run-jekyll)
+       (evil-leader/set-key-for-mode 'jekyll-mode "mh" 'hyde)
+       (evil-leader/set-key-for-mode 'jekyll-mode "ms" 'hyde/serve)
+       (evil-leader/set-key-for-mode 'jekyll-mode "mS" 'hyde/stop-serve)
+       (evil-leader/set-key-for-mode 'jekyll-mode "mj" 'hyde/run-jekyll)
 
        (evil-leader/set-key-for-mode 'hyde/hyde-mode "mh" 'hyde)
        (evil-leader/set-key-for-mode 'hyde/hyde-mode "ms" 'hyde/serve)
