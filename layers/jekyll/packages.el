@@ -41,8 +41,7 @@
        (defvar hyde-home nil)
        (define-derived-mode jekyll-mode hyde-markdown-mode "jekyll")
 
-       (add-to-list 'auto-mode-alist '("\\.md\\'" . jekyll-mode))
-       (add-to-list 'auto-mode-alist '("\\.markdown\\'" . jekyll-mode)))
+       (add-to-list 'magic-mode-alist '("---" . jekyll-mode)))
      :config
      (progn
        (evil-leader/set-key-for-mode 'jekyll-mode "mh" 'hyde)
